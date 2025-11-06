@@ -8,6 +8,7 @@ on:
     types: [closed]
     branches:
       - main
+      - develop-test
   workflow_dispatch:
     inputs:
       environment:
@@ -25,7 +26,7 @@ on:
         default: false
         type: boolean
 
-# Step 4: Apply least privilege permissions  
+# Step 4: Apply the least privilege permissions
 # 👇 Uncomment in Step 4: Secure Authentication
 # permissions:
 #   contents: read      # Can read repository
@@ -211,7 +212,7 @@ jobs:
       #   run: |
       #     # 🚨 SECURITY ISSUE: Hardcoded password!
       #     echo "password123" | docker login ghcr.io -u admin --password-stdin
-      #     echo "⚠️  Using hardcoded credentials - SECURITY RISK!"
+      #     echo "⚠️ Using hardcoded credentials - SECURITY RISK!"
 
       # GOOD: Uncomment for Step 4: Secure Authentication
       # 👇 Uncomment this section in Step 4 and comment out the above
@@ -240,7 +241,7 @@ jobs:
       #     echo "🔍 Scanning container for vulnerabilities..."
           
       #     # Option A: Scan everything (may find system vulnerabilities)
-      #     echo "📊 Full vulnerability report:"
+      #     echo "📊 Full vulnerability report":
           
       #     grype ghcr.io/${{ github.repository }}/kodekloud-records:${{ env.VERSION }} \
       #       --fail-on high \
