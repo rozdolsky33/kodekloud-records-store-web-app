@@ -21,5 +21,5 @@ ENV PYTHONPATH=/app/src
 # Expose the FastAPI port
 EXPOSE 8000
 
-# Start the FastAPI app
+# Start the FastAPI app trigger
 CMD ["uvicorn", "api.main:app", "--host", "0.0.0.0", "--port", "8000"]
